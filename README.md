@@ -1,2 +1,2 @@
-# Rate-Limit-BruteForce-Template
-Rate Limit BruteForce Template
+# Rate-Limit-Test-Template
+Rate Limit Test Template
