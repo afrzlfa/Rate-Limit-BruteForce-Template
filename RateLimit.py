@@ -21,8 +21,8 @@ class RateLimitTest:
             "User-Agent": self.useragent()
         }
 
-    def payloadSet(self):
-        return "payload"
+    def payloadSet(self, data):
+        return data
     
     def checkRequest(self, headers, payload):
         try:
@@ -37,8 +37,7 @@ class RateLimitTest:
             with open(self.args.wordlist, "r") as file:
                 for line in file:
                     word = line.strip()
-                    payload = {"word": word}
-                    response = self.checkRequest(self.headersSet(), payload)
+                    response = self.checkRequest(self.headersSet(), self.payloadSet({"word": word}))
                     print(f"[*] Word: {word}\n[*] Response: {response}\n{'-'*50}")
         except Exception as e:
             print(f"[-] Error: {e}")
