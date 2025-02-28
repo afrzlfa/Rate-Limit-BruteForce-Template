@@ -6,6 +6,9 @@ class RateLimitTest:
     def __init__(self, args):
         self.args = args
 
+    def banner(self):
+        print("[*] [Rate Limit Test Template | By Afrizal F.A - R&D incrustwerush.org]\n")
+
     def useragent(self):
         arr = [
             "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.0.12) Gecko/2009070611 Firefox/3.0.12 (.NET CLR 3.5.30729)",
@@ -48,5 +51,8 @@ if __name__ == "__main__":
     arg.add_argument("-w", "--wordlist", required=True, help="Path to wordlist file")
     args = arg.parse_args()
 
+    print("[*] [Start Testing]")
+
     App = RateLimitTest(args)
+    App.banner()
     App.looper()
